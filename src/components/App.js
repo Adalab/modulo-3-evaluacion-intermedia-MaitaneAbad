@@ -108,7 +108,7 @@ function App() {
   return (
     <div class='page'>
       <header className='header'>
-        <h1>Mis clubs</h1>
+        <h1 class='title'>Mis clubs</h1>
 
         <form className='select'>
           <label htmlFor='filter' className='labelSelector'>

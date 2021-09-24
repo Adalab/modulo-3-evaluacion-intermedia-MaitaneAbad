@@ -10,30 +10,31 @@
 }
 .header {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 10;
+  flex-direction: column;
   border-bottom: 1px solid rgb(209, 204, 204);
   margin: 0 10px;
+  .title {
+    font-size: 6vw;
+  }
   .select {
-    margin: auto 10px;
+    margin: 15px 0 2px 5px;
     .labelSelector {
-      font-size: 22px;
+      font-size: 1.5em;
     }
     .optionSelect {
       border: 1px black solid;
+      width: 200px;
       border-radius: 5px;
     }
   }
 }
 .listComplete {
-  display: flex;
-  justify-content: start;
   padding: 10px;
   color: #000;
   .list {
     margin: 10px 5px;
     padding: 15px 10px;
-    background-color: aquamarine;
+    background-color: rgb(197, 212, 208);
     border-radius: 12px;
     .textTitle {
       margin: 15px 5px;
@@ -45,9 +46,9 @@
       margin: auto;
 
       .button {
-        background-color: rgb(77, 28, 168);
+        background-color: rgb(127, 93, 189);
         margin: 10px 5px;
-        color: rgb(206, 165, 103);
+        color: rgb(224, 223, 221);
         padding: 5px;
         border-radius: 15px;
       }
