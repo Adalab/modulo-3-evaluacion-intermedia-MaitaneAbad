@@ -45,18 +45,19 @@ function App() {
     ev.preventDefault();
     if (newClub.name !== '') {
       setClubs([...clubs, newClub]);
-
-      setNewClub({
-        name: '',
-        openOnWeekdays: '',
-        openOnWeekend: '',
-      });
     }
-
-    console.log(clubs);
+    setNewClub({
+      name: '',
+      openOnWeekdays: false,
+      openOnWeekend: false,
+    });
   };
   const handleDeleteClub = (ev) => {
+    // esta funcion necesitamos saber SIEMPRE EL ID, luego cogemos el array principal y le borramos el clickado y 1 solo ( id,1) para que no nos borre más elementos y después volvemos a actualizar el estado para que lo muestre en el HTML
     ev.preventDefault();
+    const id = ev.currentTarget.id;
+    clubs.splice(id, 1);
+    setClubs([...clubs]);
     // If click borrame ese objeto del array
   };
   const renderClubs = () => {
@@ -124,6 +125,7 @@ function App() {
             id='name'
             placeholder=' Ej. Robótica'
             onChange={handleNewCLub}
+            value={newClub.name}
           />
           <label htmlFor='week'>¿Abre entre semana?</label>
           <input
@@ -131,6 +133,7 @@ function App() {
             name='week'
             id='week'
             onChange={handleNewCLub}
+            checked={newClub.openOnWeekdays}
           />
           <label htmlFor='weekends'>¿Abre los fines de semana?</label>
           <input
@@ -138,6 +141,7 @@ function App() {
             name='weekends'
             id='weekends'
             onChange={handleNewCLub}
+            checked={newClub.openOnWeekend}
           />
 
           <input type='submit' value='Añadir' onClick={handleNewClub} />
