@@ -1,25 +1,84 @@
 @import './layout/reset.scss';
+.page {
+  padding: 2rem;
 
-.line {
-  margin: 10px 0;
+  min-height: 100vh;
+  background-image: url('../images/blackboard.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: aliceblue;
 }
-.list {
+.header {
   display: flex;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: aquamarine;
-  border-radius: 12px;
-  .divButton {
-    display: flex;
-    align-items: center;
-    margin: auto;
-
-    .button {
-      background-color: rgb(77, 28, 168);
-      color: rgb(206, 165, 103);
-      padding: 10px;
-      border-radius: 15px;
-      border: 0;
+  justify-content: space-between;
+  padding: 20px 10;
+  border-bottom: 1px solid rgb(209, 204, 204);
+  margin: 0 10px;
+  .select {
+    margin: auto 10px;
+    .labelSelector {
+      font-size: 22px;
     }
+    .optionSelect {
+      border: 1px black solid;
+      border-radius: 5px;
+    }
+  }
+}
+.listComplete {
+  display: flex;
+  justify-content: start;
+  padding: 10px;
+  color: #000;
+  .list {
+    margin: 10px 5px;
+    padding: 15px 10px;
+    background-color: aquamarine;
+    border-radius: 12px;
+    .textTitle {
+      margin: 15px 5px;
+    }
+    .divButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      margin: auto;
+
+      .button {
+        background-color: rgb(77, 28, 168);
+        margin: 10px 5px;
+        color: rgb(206, 165, 103);
+        padding: 5px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
+.formNewClub {
+  padding: 20px 10px;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  .title {
+    border-bottom: 1px solid rgb(209, 204, 204);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .inputText {
+    border: 1px black solid;
+    width: 150px;
+    margin: 10px 0;
+
+    border-radius: 5px;
+  }
+  .inputCheckbox {
+    margin: 0 10px;
+  }
+  .button {
+    width: 150px;
+    margin: 10px 0;
+    border: 1px rgb(155, 153, 153) solid;
+    border-radius: 5px;
   }
 }

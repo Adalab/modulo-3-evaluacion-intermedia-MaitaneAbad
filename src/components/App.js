@@ -82,17 +82,17 @@ function App() {
           return (
             <li key={i} id={i} className='list'>
               <div>
-                <p>
+                <p className='textTitle'>
                   <label>Nombre: </label>
                   {'' + clubs.name}
                 </p>
-                <p>
-                  <label>Abierto entre semana:</label>
-                  {clubs.openOnWeekdays ? ' Si' : ' No'}
+                <p className='textTitle'>
+                  <label>Abierto entre semana: </label>
+                  {clubs.openOnWeekdays ? '  Si' : ' No'}
                 </p>
-                <p>
+                <p className='textTitle'>
                   <label>Abierto el fin de semana:</label>
-                  {clubs.openOnWeekend ? 'Si' : 'No'}
+                  {clubs.openOnWeekend ? ' Si' : ' No'}
                 </p>
               </div>
               <div className='divButton'>
@@ -106,24 +106,30 @@ function App() {
     );
   };
   return (
-    <div>
+    <div class='page'>
       <header className='header'>
         <h1>Mis clubs</h1>
 
-        <form>
-          <label htmlFor='filter'>Mostrar</label>
-          <select value={searchClubs} onChange={handleSearchClub}>
+        <form className='select'>
+          <label htmlFor='filter' className='labelSelector'>
+            Mostrar{' '}
+          </label>
+          <select
+            value={searchClubs}
+            onChange={handleSearchClub}
+            className='optionSelect'
+          >
             <option value='other'>Todos</option>
             <option value='week'>Los que abren entre semana</option>
             <option value='weekend'>Los que abren en fin de semana</option>
           </select>
         </form>
-        <hr className='line'></hr>
-        <ul>{renderClubs()}</ul>
       </header>
       <main>
-        <form>
-          <label htmlFor='name'>Nombre del club</label>
+        <ul class='listComplete'>{renderClubs()}</ul>
+        <form className='formNewClub'>
+          <h2 className='title'>Nuevo Club</h2>
+          <label htmlFor='name'>Nombre del club:</label>
           <input
             type='text'
             name='name'
@@ -131,25 +137,37 @@ function App() {
             placeholder=' Ej. Robótica'
             onChange={handleNewCLub}
             value={newClub.name}
+            className='inputText'
           />
-          <label htmlFor='week'>¿Abre entre semana?</label>
-          <input
-            type='checkbox'
-            name='week'
-            id='week'
-            onChange={handleNewCLub}
-            checked={newClub.openOnWeekdays}
-          />
-          <label htmlFor='weekends'>¿Abre los fines de semana?</label>
-          <input
-            type='checkbox'
-            name='weekends'
-            id='weekends'
-            onChange={handleNewCLub}
-            checked={newClub.openOnWeekend}
-          />
+          <label htmlFor='week'>
+            ¿Abre entre semana?
+            <input
+              type='checkbox'
+              name='week'
+              id='week'
+              onChange={handleNewCLub}
+              checked={newClub.openOnWeekdays}
+              className='inputCheckbox'
+            />
+          </label>
+          <label htmlFor='weekends'>
+            ¿Abre los fines de semana?
+            <input
+              type='checkbox'
+              name='weekends'
+              id='weekends'
+              onChange={handleNewCLub}
+              checked={newClub.openOnWeekend}
+              className='inputCheckbox'
+            />
+          </label>
 
-          <input type='submit' value='Añadir' onClick={handleNewClub} />
+          <input
+            type='submit'
+            value='Añadir'
+            className='button'
+            onClick={handleNewClub}
+          />
         </form>
       </main>
     </div>
