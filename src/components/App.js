@@ -80,21 +80,26 @@ function App() {
         })
         .map((clubs, i) => {
           return (
-            <li key={i} id={i}>
-              <p>
-                <label>Nombre: </label>
-                {'' + clubs.name}
-              </p>
-              <p>
-                <label>Abierto entre semana:</label>
-                {clubs.openOnWeekdays ? ' Si' : ' No'}
-              </p>
-              <p>
-                <label>Abierto el fin de semana:</label>
-                {clubs.openOnWeekend ? 'Si' : 'No'}
-              </p>
-
-              <button onClick={handleDeleteClub}>X</button>
+            <li key={i} id={i} className='list'>
+              <div>
+                <p>
+                  <label>Nombre: </label>
+                  {'' + clubs.name}
+                </p>
+                <p>
+                  <label>Abierto entre semana:</label>
+                  {clubs.openOnWeekdays ? ' Si' : ' No'}
+                </p>
+                <p>
+                  <label>Abierto el fin de semana:</label>
+                  {clubs.openOnWeekend ? 'Si' : 'No'}
+                </p>
+              </div>
+              <div className='divButton'>
+                <button className='button' onClick={handleDeleteClub}>
+                  X
+                </button>
+              </div>
             </li>
           );
         })
@@ -102,7 +107,7 @@ function App() {
   };
   return (
     <div>
-      <header>
+      <header className='header'>
         <h1>Mis clubs</h1>
 
         <form>
@@ -113,7 +118,7 @@ function App() {
             <option value='weekend'>Los que abren en fin de semana</option>
           </select>
         </form>
-        <hr></hr>
+        <hr className='line'></hr>
         <ul>{renderClubs()}</ul>
       </header>
       <main>

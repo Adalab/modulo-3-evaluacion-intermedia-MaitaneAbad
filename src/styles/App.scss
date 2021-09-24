@@ -1,1 +1,25 @@
+@import './layout/reset.scss';
 
+.line {
+  margin: 10px 0;
+}
+.list {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: aquamarine;
+  border-radius: 12px;
+  .divButton {
+    display: flex;
+    align-items: center;
+    margin: auto;
+
+    .button {
+      background-color: rgb(77, 28, 168);
+      color: blanchedalmond;
+      padding: 10px;
+      border-radius: 15px;
+      border: 0;
+    }
+  }
+}
