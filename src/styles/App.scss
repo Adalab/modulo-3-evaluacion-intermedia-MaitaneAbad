@@ -5,6 +5,7 @@
   background-size: cover;
   background-position: center center;
   color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
 }
 .header {
   display: flex;
@@ -33,6 +34,7 @@
 
   @media (min-width: 700px) {
     display: flex;
+    margin: 10px;
   }
 
   .list {
@@ -42,8 +44,12 @@
     border-radius: 12px;
     width: 80%;
     box-sizing: border-box;
+    @media (min-width: 700px) {
+      margin: 10px;
+    }
     .textTitle {
       margin: 10px 0 5px 0;
+      font-weight: 900;
     }
     .divButton {
       margin-top: 10px;
@@ -66,9 +72,9 @@
     text-align: center;
     background-color: rgb(127, 93, 189);
     border-radius: 10px;
-    font-size: 4vw;
+    font-size: 3vw;
     width: 60%;
-    margin: auto;
+    margin: 30px auto;
   }
   .labelTitle {
     margin: 20px 0 10px 0;
@@ -81,9 +87,9 @@
   }
   .inputText {
     border: 1px black solid;
-    width: 150px;
+    width: 130px;
     margin: 5px auto 10px auto;
-    height: 5vh;
+    height: 4vh;
     border-radius: 5px;
   }
   .labelCheckbox {
@@ -92,10 +98,10 @@
     }
   }
   .button {
-    width: 150px;
+    width: 100px;
     margin: 10px auto;
     border: 1px rgb(155, 153, 153) solid;
     border-radius: 5px;
-    height: 5vh;
+    height: 4vh;
   }
 }

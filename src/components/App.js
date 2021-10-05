@@ -78,16 +78,16 @@ function App() {
           return (
             <li key={i} id={i} className='list'>
               <div>
-                <p className='textTitle'>
-                  <label>Nombre: </label>
+                <p>
+                  <label className='textTitle'>Nombre: </label>
                   {'' + clubs.name}
                 </p>
-                <p className='textTitle'>
-                  <label>Abierto entre semana: </label>
+                <p>
+                  <label className='textTitle'>Abierto entre semana: </label>
                   {clubs.openOnWeekdays ? '  Si' : ' No'}
                 </p>
-                <p className='textTitle'>
-                  <label>Abierto el fin de semana:</label>
+                <p>
+                  <label className='textTitle'>Abierto el fin de semana:</label>
                   {clubs.openOnWeekend ? ' Si' : ' No'}
                 </p>
               </div>
