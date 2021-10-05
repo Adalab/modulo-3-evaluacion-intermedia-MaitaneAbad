@@ -67,17 +67,13 @@ function App() {
         .filter((clubs) => {
           if (searchClubs === 'week') {
             return clubs.openOnWeekdays === true;
-          } else {
-            return true;
-          }
-        })
-        .filter((clubs) => {
-          if (searchClubs === 'weekend') {
+          } else if (searchClubs === 'weekend') {
             return clubs.openOnWeekend === true;
           } else {
             return true;
           }
         })
+
         .map((clubs, i) => {
           return (
             <li key={i} id={i} className='list'>
