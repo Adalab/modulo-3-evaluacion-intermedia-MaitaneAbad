@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   // constantes de estado
   const [clubs, setClubs] = useState(data);
-  const [searchClubs, setSearchClubs] = useState('');
+  const [searchClubs, setSearchClubs] = useState('other');
   const [newClub, setNewClub] = useState({
     name: '',
     openOnWeekdays: false,
@@ -129,45 +129,49 @@ function App() {
         <ul class='listComplete'>{renderClubs()}</ul>
         <form className='formNewClub'>
           <h2 className='title'>Nuevo Club</h2>
-          <label htmlFor='name'>Nombre del club:</label>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            placeholder=' Ej. Robótica'
-            onChange={handleNewCLub}
-            value={newClub.name}
-            className='inputText'
-          />
-          <label htmlFor='week'>
-            ¿Abre entre semana?
+          <fieldset className='fieldset'>
+            <label htmlFor='name' className='labelTitle'>
+              Nombre del club:
+            </label>
             <input
-              type='checkbox'
-              name='week'
-              id='week'
+              type='text'
+              name='name'
+              id='name'
+              placeholder=' Ej. Robótica'
               onChange={handleNewCLub}
-              checked={newClub.openOnWeekdays}
-              className='inputCheckbox'
+              value={newClub.name}
+              className='inputText'
             />
-          </label>
-          <label htmlFor='weekends'>
-            ¿Abre los fines de semana?
-            <input
-              type='checkbox'
-              name='weekends'
-              id='weekends'
-              onChange={handleNewCLub}
-              checked={newClub.openOnWeekend}
-              className='inputCheckbox'
-            />
-          </label>
+            <label htmlFor='week' className='labelCheckbox'>
+              ¿Abre entre semana?
+              <input
+                type='checkbox'
+                name='week'
+                id='week'
+                onChange={handleNewCLub}
+                checked={newClub.openOnWeekdays}
+                className='inputCheckbox'
+              />
+            </label>
+            <label htmlFor='weekends' className='labelCheckbox'>
+              ¿Abre los fines de semana?
+              <input
+                type='checkbox'
+                name='weekends'
+                id='weekends'
+                onChange={handleNewCLub}
+                checked={newClub.openOnWeekend}
+                className='inputCheckbox'
+              />
+            </label>
 
-          <input
-            type='submit'
-            value='Añadir'
-            className='button'
-            onClick={handleNewClub}
-          />
+            <input
+              type='submit'
+              value='Añadir'
+              className='button'
+              onClick={handleNewClub}
+            />
+          </fieldset>
         </form>
       </main>
     </div>
